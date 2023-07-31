@@ -1,27 +1,44 @@
-#Cree un codigo donde simule una calculadora y con la inicial del nombre de cada operador realice la funcion que desee.
+"""En un juego de preguntas a las que se responde “Si” o “No” gana quien
+responda correctamente las tres preguntas. Si se responde mal a cualquiera de
+ellas ya no se pregunta la siguiente y termina el juego. Las preguntas son:
+1. Colon descubrió América?
+2. La independencia de Colombia fue en el año 1810?
+3. The Doors fue un grupo de rock Americano?
+"""
+def jugar_preguntas():
+    num_preguntas = 3 #Se inicia la variable num_preguntascon el valor 3, lo que significa que habrá tres preguntas en total.
+    aciertos = 0 #será utilizada para contar la cantidad de preguntas que el usuario respondió bien
 
-numero1=int(input("Ingrese un numero: "))
-numero2=int(input("Ingrese otro numero: "))
-numero3=int(input("Ingrese un tercer numero: "))
+    for i in range(1, num_preguntas + 1):
+        print("Pregunta", i)
 
-operacion = input("Ingrese la operacion que desea realizar:").upper()
+        if i == 1:
+            pregunta = "¿Colón descubrió América?"
+            respuesta = "si"
+        elif i == 2:
+            pregunta = "¿La independencia de Colombia fue en el año 1810?"  
+            respuesta = "si"
+        elif i == 3:
+            pregunta = "¿The Doors fue un grupo de rock americano?"
+            respuesta = "si"
 
-if operacion=="S":
-        suma = numero1+numero2+numero3
-        print(f" La suma de los numeros es: {suma}")
-elif operacion=="R":
-     resta = numero1-numero2-numero3
-     print(f"La resta de los numeros es: {resta}")
-elif operacion=="M":
-     multiplicacion= numero1*numero2*numero3
-     print(f"La multiplicacion de los numeros es: {multiplicacion}")
-elif operacion=="D":
-     division= numero1/numero2/numero3
-     print(f"La division de los numeros es: {division}")
+        print(pregunta)
+        respuesta_usuario = input("Tu respuesta: ").lower()#Lee la respuesta y la convierte a minúsculas 
 
-else:
-    print("La operacion no esta en las opciones.")
-    print("Vuelve a ingresar una operacion matematica.")
+        if respuesta_usuario == "si" or respuesta_usuario == "no": #Verifica si la respuesta del usuario es "si" o "no"
+            if respuesta_usuario == respuesta:#Si la respuesta es corretca, compara con la respuesta esperada
+                print("¡Respuesta correcta!")
+                aciertos += 1 # aumenta el contador de aciertosen 1
+            else:
+                print("Respuesta incorrecta.")
+        else:
+            print("Respuesta inválida. Por favor, responde 'sí' o 'no.'")
+        print()
+
+    print("Juego terminado.")
+    print("Has acertado", aciertos, "preguntas de", num_preguntas, "preguntas.")
+
+jugar_preguntas()
     
     
     

@@ -1,18 +1,27 @@
-""" Cree un codigo que le permita calcular cuantas horas trabaja en un mes y cuanto se gana al mes ingresando su pago diario al dia 
-"""
+#Escribe un programa que pida tres números y que escriba si son los tres son iguales, si hay dos iguales o si son los tres distintos
+   
+def numeros(): #se define lafuncion sin ningun parametro
 
-horas_diarias=int(input("Ingrese las horas trabajadas por el dia: "))
-dias_trabajados=int(input("Ingrese cuantos dias trabajo: "))
-pago_diario=float(input("Ingrese su salario por dia: "))
+ try:
+     
+     num1=int(input("Ingrese el primer numero: "))
+     num2=int(input("Ingrese el segundo numero: "))
+     num3=int(input("Ingrese el tercer numero: "))
+           
+     if num1==num2==num3:
+        print("Los tres numeros son iguales.")
 
-if horas_diarias > 0 and pago_diario > 0 and dias_trabajados >0:
-    horas_trabajadas= horas_diarias * dias_trabajados
-    salario_mensual= horas_trabajadas* pago_diario
+     elif num1 == num2 or num1 == num3 or num2 == num3:
+       print("Dos numeros son iguales")
 
-    print("Las horas trabajadas al mes fueron:", horas_trabajadas )
+     #elif num1!= num2 or num1 != num3 or num2 != num3:
+     else:
+       print("Los tres números que ha escrito son distintos.")       
+    
+   
 
-    print("Salario mensual:", salario_mensual)
+ except ValueError:
+    print("ERROR, EL VALOR INGRESADO ES ERRONEO //ES UNA LETRA//")
 
-else:
-    print("Ese valor fue invalido, Ingrese un valor nuevo. ")
+numeros()
     
